@@ -1,0 +1,45 @@
+# Actividad 2 Mini- Tuetle version poo
+
+mini_turtle_oo/
+│
+├── mini_turtle_oo/
+│   ├── __init__.py
+│   └── turtle_class.py
+│
+├── main.py
+└── README.md
+
+class Tortuga:
+    def __init__(self):
+        self.tortuga = "🐢"
+        self.posicion_x = 0
+
+    def adelante(self, pasos):
+        print(" " * self.posicion_x + "_ " * pasos)
+        self.posicion_x += pasos * 2
+
+    def abajo(self, pasos):
+        for _ in range(pasos - 1):
+            print(" " * self.posicion_x + "|")
+        print(" " * self.posicion_x + self.tortuga)
+
+    def reiniciar(self):
+        self.posicion_x = 0
+
+from .turtle_class import Tortuga
+
+__all__ = ["Tortuga"]
+
+from mini_turtle_oo import Tortuga
+
+t1 = Tortuga()
+t2 = Tortuga()
+
+print("Tortuga 1")
+t1.adelante(4)
+t1.abajo(3)
+
+print("\nTortuga 2")
+t2.adelante(8)
+t2.abajo(2)
+
